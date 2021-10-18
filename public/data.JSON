@@ -1,0 +1,65 @@
+[
+  {
+    "_id": "615a4c6773fe3c83e8940051",
+    "name": "Home Workout",
+    "topic": "Daily no equipment workout ",
+    "price": "170",
+    "instructor": "Prapty Rahman",
+    "instructorImg": "/images/trainers/darryl-removebg-preview.png",
+    "backgroundImg": "https://images.pexels.com/photos/6740753/pexels-photo-6740753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  },
+  {
+    "_id": "615a4c67e5fd04c03e417896",
+    "name": "Yoga Freestyle",
+    "topic": "Freestyle yoga instruction anytime",
+    "price": "80",
+    "instructor": "Sadman Sadik",
+    "instructorImg": "/images/trainers/dustin-removebg-preview.png",
+    "backgroundImg": "https://cdn.pixabay.com/photo/2018/01/01/01/56/yoga-3053488_960_720.jpg"
+  },
+  {
+    "_id": "615a4c67bb7f2af1b3d0a483",
+    "name": "Weight Loss",
+    "topic": "Get back to shape in 15 weeks",
+    "price": "250",
+    "instructor": "Antik Mahmud",
+    "instructorImg": "/images/trainers/gregg-removebg-preview.png",
+    "backgroundImg": "https://images.pexels.com/photos/6550872/pexels-photo-6550872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+  {
+    "_id": "615a4c6745d51b275dad55e9",
+    "name": "Healthy Diet",
+    "topic": "you will know what a healthy diet",
+    "price": "100",
+    "instructor": "Fahim Murshed",
+    "instructorImg": "/images/trainers/jamie-removebg-preview.png",
+    "backgroundImg": "https://cdn.pixabay.com/photo/2019/07/25/17/22/diet-4363111_960_720.jpg"
+  },
+  {
+    "_id": "615a4c67133960c801764ff0",
+    "name": "Graphic Design",
+    "topic": "Daily no equipment workout",
+    "price": "450",
+    "instructor": "Anisha Saiyara",
+    "instructorImg": "/images/trainers/jhon-removebg-preview.png",
+    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+  },
+  {
+    "_id": "615a4c67133960c801764ff1",
+    "name": "Graphic Design",
+    "topic": "Daily no equipment workout",
+    "price": "450",
+    "instructor": "Anisha Saiyara",
+    "instructorImg": "/images/trainers/jhon-removebg-preview.png",
+    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+  },
+  {
+    "_id": "615a4c67133960c801764ff2",
+    "name": "Graphic Design",
+    "topic": "Daily no equipment workout",
+    "price": "450",
+    "instructor": "Anisha Saiyara",
+    "instructorImg": "/images/trainers/jhon-removebg-preview.png",
+    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+  }
+]

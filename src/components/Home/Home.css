@@ -1,0 +1,18 @@
+.home-services {
+  position: relative;
+  top: -70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 1030px) and (min-width: 770px) {
+  .home-services {
+    top: 0;
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 300) {
+  .home-services {
+  }
+}
