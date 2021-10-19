@@ -45,7 +45,8 @@ const Home = () => {
       >
         {' '}
       </Banner>
-      {services.length && (
+
+      {services.length ? (
         <div className="home-services pt-0 mt-0  container mx-auto">
           <div className="xl:pt-10 pt-0  text-center flex justify-center">
             <HomeCard service={services[0]}></HomeCard>
@@ -65,6 +66,10 @@ const Home = () => {
           <div className=" text-center flex justify-center ">
             <HomeCard service={services[5]}></HomeCard>
           </div>
+        </div>
+      ) : (
+        <div class=" flex justify-center items-center">
+          <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
         </div>
       )}
       <Testimonial></Testimonial>

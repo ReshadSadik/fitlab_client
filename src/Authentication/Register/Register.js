@@ -6,7 +6,7 @@ import { BsFillEyeSlashFill } from 'react-icons/bs';
 const Register = () => {
   let history = useHistory();
   let location = useLocation();
-  const redirectUrl = location.state?.from || '/';
+  const redirectUrl = '/';
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
@@ -35,8 +35,9 @@ const Register = () => {
   const handleRegister = (email, password, displayName) => {
     getRegisterEmailPassword(email, password, displayName).then(
       (userCredential) => {
-        userCredential?.user ? history.push(redirectUrl) : <div></div>;
+        // userCredential?.user ? history.push(redirectUrl) : <div></div>;
         // history.push(redirectUrl);
+        users.email && history.push('/');
       }
     );
   };
