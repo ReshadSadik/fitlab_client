@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../components/hooks/useAuth';
 import { BsFillEyeSlashFill } from 'react-icons/bs';
 
 const Login = () => {
   const { getLoginEmailPassword, googleSignIn, users, error, setError } =
     useAuth();
+  let history = useHistory();
+  let location = useLocation();
+  const redirectUrl = location.state?.from || '/';
+
+  const handleRedirect = () => {
+    googleSignIn().then((result) => {
+      history.push(redirectUrl);
+    });
+  };
+
   useEffect(() => {
     setError('');
   }, []);
@@ -117,7 +127,7 @@ const Login = () => {
                 </p>
                 <div className="flex mt-5 mx-auto text-center">
                   <button
-                    onClick={googleSignIn}
+                    onClick={handleRedirect}
                     className="bg-green-600 mx-5   xl:px-5 px-3 rounded-3xl  h-8 xl:h-10 text-white font-semibold text-sm hover:bg-green-500 mb-5"
                   >
                     google sign in

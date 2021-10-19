@@ -11,6 +11,7 @@ import ServiceDetails from './components/serviceDetails/ServiceDetails';
 import Login from './Authentication/Login/Login';
 import Register from './Authentication/Register/Register';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -37,9 +38,9 @@ function App() {
               {' '}
               <About> </About>{' '}
             </Route>
-            <Route exact path="/home/service/:_id">
+            <PrivateRoute exact path="/home/service/:_id">
               <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
