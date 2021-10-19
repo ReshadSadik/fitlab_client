@@ -62,7 +62,7 @@ const Header = () => {
                   class="inline-block font-bold text-white   py-2 px-4"
                   to="/services"
                 >
-                  SERVICES
+                  All SERVICES
                 </Link>
               </li>
               <li class="mr-3">
@@ -74,25 +74,25 @@ const Header = () => {
                 </Link>
               </li>
               <li class="mr-3">
-                <Link
+                {/* <Link
                   class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                   to="/about"
                 >
                   ABOUT
-                </Link>
+                </Link> */}
               </li>
             </ul>
             <div class="mx-5 ">
               <div>
                 {!users.email ? (
                   <Link
-                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl  py-2 px-4 mb-2"
+                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl  py-2 px-4 xl:mb-0 mb-2"
                     to="/login"
                   >
                     Login
                   </Link>
                 ) : (
-                  <div class="inline-block font-bold text-green-600 no-underline hover:text-green-900 hover:text-underline bg-white  rounded-xl  py-2 px-4 cursor-pointer mb-2">
+                  <div class="inline-block font-bold text-green-600 no-underline hover:text-green-900 hover:text-underline bg-white  rounded-xl  py-2 px-4 cursor-pointer xl:mb-0 mb-2">
                     <h2>{users.displayName}</h2>
                   </div>
                 )}

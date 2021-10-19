@@ -6,6 +6,7 @@ import './Services.css';
 const Services = () => {
   const [services] = useItems();
   const homeBannerImg = '../../images/banner-bg-2.jpg';
+  const reverseServices = services.reverse();
   const bannerText = (
     <div
       class="my-4 xl:mt-40 xl:mr-96 mt-80  mr-0   text-white md:text-5xl
@@ -26,7 +27,7 @@ const Services = () => {
         {' '}
       </Banner>
       <div className="services ">
-        {services.map((service) => (
+        {reverseServices.map((service) => (
           <Service service={service}> </Service>
         ))}
       </div>

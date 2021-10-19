@@ -2,64 +2,73 @@
   {
     "_id": "615a4c6773fe3c83e8940051",
     "name": "Home Workout",
-    "topic": "Daily no equipment workout ",
+    "topic": "Daily no equipment workout! ",
     "price": "170",
-    "instructor": "Prapty Rahman",
+    "instructor": "Darryl jonathan",
     "instructorImg": "/images/trainers/darryl-removebg-preview.png",
     "backgroundImg": "https://images.pexels.com/photos/6740753/pexels-photo-6740753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "_id": "615a4c67e5fd04c03e417896",
     "name": "Yoga Freestyle",
-    "topic": "Freestyle yoga instruction anytime",
+    "topic": "Freestyle yoga instruction anytime!",
     "price": "80",
-    "instructor": "Sadman Sadik",
+    "instructor": "Dustin gorefield",
     "instructorImg": "/images/trainers/dustin-removebg-preview.png",
     "backgroundImg": "https://cdn.pixabay.com/photo/2018/01/01/01/56/yoga-3053488_960_720.jpg"
   },
   {
     "_id": "615a4c67bb7f2af1b3d0a483",
     "name": "Weight Loss",
-    "topic": "Get back to shape in 15 weeks",
+    "topic": "Get back to shape in 15 weeks!",
     "price": "250",
-    "instructor": "Antik Mahmud",
+    "instructor": "gregg spieres",
     "instructorImg": "/images/trainers/gregg-removebg-preview.png",
     "backgroundImg": "https://images.pexels.com/photos/6550872/pexels-photo-6550872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   },
   {
     "_id": "615a4c6745d51b275dad55e9",
     "name": "Healthy Diet",
-    "topic": "you will know what a healthy diet",
+    "topic": "you will know what a healthy diet!",
     "price": "100",
-    "instructor": "Fahim Murshed",
+    "instructor": "jamie vardie",
     "instructorImg": "/images/trainers/jamie-removebg-preview.png",
     "backgroundImg": "https://cdn.pixabay.com/photo/2019/07/25/17/22/diet-4363111_960_720.jpg"
   },
   {
     "_id": "615a4c67133960c801764ff0",
-    "name": "Graphic Design",
-    "topic": "Daily no equipment workout",
-    "price": "450",
-    "instructor": "Anisha Saiyara",
+    "name": "Heavy Workout",
+    "topic": "Heavy duty workout to give you the best output!",
+    "price": "300",
+    "instructor": "Jhon Snow",
     "instructorImg": "/images/trainers/jhon-removebg-preview.png",
-    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+    "backgroundImg": "https://image.freepik.com/free-photo/confident-young-muscular-caucasian-athlete-practicing-gym-with-weights-male-model-doing-strength-exercises-training-his-upper-body-wellness-healthy-lifestyle-bodybuilding-concept_155003-36810.jpg"
   },
   {
     "_id": "615a4c67133960c801764ff1",
-    "name": "Graphic Design",
-    "topic": "Daily no equipment workout",
-    "price": "450",
-    "instructor": "Anisha Saiyara",
-    "instructorImg": "/images/trainers/jhon-removebg-preview.png",
-    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+    "name": "Mindful Cooldown",
+    "topic": "Cool your soul with this mindful training!",
+    "price": "150",
+    "instructor": "Sherica holmon",
+    "instructorImg": "/images/trainers/sherica_holmon.png",
+    "backgroundImg": "https://image.freepik.com/free-photo/i-wish-this-moment-could-stay-forever_329181-11286.jpg"
   },
   {
     "_id": "615a4c67133960c801764ff2",
-    "name": "Graphic Design",
-    "topic": "Daily no equipment workout",
-    "price": "450",
-    "instructor": "Anisha Saiyara",
-    "instructorImg": "/images/trainers/jhon-removebg-preview.png",
-    "backgroundImg": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+    "name": "Medication",
+    "topic": "Keep your immunity safe with our Doc!",
+    "price": "100",
+    "instructor": "Dr. Mariba Gold",
+    "instructorImg": "/images/trainers/Dr_marimba_gold.png",
+    "backgroundImg": "https://image.freepik.com/free-photo/woman-s-hand-pours-medicine-pills-out-bottle_1150-14190.jpg"
+  },
+  {
+    "_id": "615a4c67133960c801764ff9",
+    "name": "Workout For Adults",
+    "topic": "Light workout for seniours to keep fit!",
+    "price": "300",
+    "instructor": "Josh Crosby",
+    "instructorImg": "/images/trainers/josh_crosby.png",
+    "backgroundImg": "https://image.freepik.com/free-photo/senior-adults-giving-high-five_53876-146537.jpg"
   }
 ]
