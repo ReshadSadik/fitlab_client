@@ -2,36 +2,36 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import './Header.css';
+import logo from '../../images/running.png';
 
 const Header = () => {
   const { users, signOutUser } = useAuth();
   return (
     <div>
       <div class="  font-sans leading-normal tracking-normal">
-        <nav class="flex items-center  justify-between flex-wrap  p-6  w-full z-10 top-0 ">
+        <nav
+          style={{
+            background: `linear-gradient(360deg, rgba(44,45,49,0.9612219887955182) 0%, rgba(12,102,74,0.9528186274509804) 13%, rgba(5,150,105,1) 100%)`,
+          }}
+          class="flex   items-center  justify-between flex-wrap  px-6 py-4  w-full z-10 top-0 "
+        >
           <div class="flex items-center md:ml-40 ml-0  flex-shrink-0 text-white mr-6">
             <a
               class="text-purple-200 font-extrabold no-underline hover:text-white hover:no-underline"
               href="/"
             >
               <span class="text-2xl mx-auto text-white flex align-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-10"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" />
-                </svg>
-                THE FUTURE WORKSHOP
+                <img className="w-8 mr-5" src={logo} alt="" />
+                FITLAB
               </span>
             </a>
           </div>
 
           <div class="block lg:hidden">
             <button
+              onClick={toggle}
               id="nav-toggle"
-              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white"
+              class="flex items-center bg-white px-3 py-2 border rounded text-green-600  border-white  hover:border-white"
             >
               <svg
                 class="fill-current h-3 w-3"
@@ -86,13 +86,13 @@ const Header = () => {
               <div>
                 {!users.email ? (
                   <Link
-                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl  py-2 px-4"
+                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl  py-2 px-4 mb-2"
                     to="/login"
                   >
                     Login
                   </Link>
                 ) : (
-                  <div class="inline-block font-bold text-green-600 no-underline hover:text-green-900 hover:text-underline bg-white rounded-xl  py-2 px-4 cursor-pointer">
+                  <div class="inline-block font-bold text-green-600 no-underline hover:text-green-900 hover:text-underline bg-white  rounded-xl  py-2 px-4 cursor-pointer mb-2">
                     <h2>{users.displayName}</h2>
                   </div>
                 )}
@@ -100,12 +100,12 @@ const Header = () => {
             </div>
             <div class="mx-5">
               <div
-                class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl mr-10  py-2 px-4 "
+                class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl xl:mr-10 mr-0 py-2 px-4 "
                 to="/register"
               >
                 {!users.email ? (
                   <Link
-                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline bg-green-600 rounded-xl  "
+                    class="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline  bg-green-600 rounded-xl  "
                     to="/register"
                   >
                     <div>Sign up</div>
@@ -127,3 +127,7 @@ const Header = () => {
 };
 
 export default Header;
+
+const toggle = () => {
+  document.getElementById('nav-content').classList.toggle('hidden');
+};

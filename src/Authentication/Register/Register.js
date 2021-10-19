@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../components/hooks/useAuth';
 import { BsFillEyeSlashFill } from 'react-icons/bs';
 
 const Register = () => {
+  let history = useHistory();
+  let location = useLocation();
+  const redirectUrl = location.state?.from || '/';
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
@@ -21,7 +24,11 @@ const Register = () => {
   const getRegisterNameValue = (e) => {
     setDisplayName(e.target.value);
   };
-
+  const handleRegister = (email, password, displayName) => {
+    getRegisterEmailPassword(email, password, displayName).then(() => {
+      history.push(redirectUrl);
+    });
+  };
   return (
     <div>
       <Link to="/register">
@@ -117,7 +124,7 @@ const Register = () => {
               </div>
               <input
                 onClick={() => {
-                  getRegisterEmailPassword(email, password, displayName);
+                  handleRegister(email, password, displayName);
                 }}
                 className=" bg-green-600 text-white font-semibold  xl:p-3 p-1 rounded-3xl w-1/2 h-full "
                 type="submit"
@@ -144,9 +151,6 @@ const Register = () => {
                   className="bg-green-600 text-white font-semibold xl:mx-5 mx-1   xl:px-5 px-3 rounded-3xl  h-8 xl:h-10 text-sm  mb-5"
                 >
                   google sign up
-                </button>
-                <button className="bg-green-600 text-white font-semibold xl:mx-5 mx-1  xl:px-5 px-3 rounded-3xl  h-8 xl:h-10 text-sm  mb-5">
-                  facebook sign up
                 </button>
               </div>
             </div>

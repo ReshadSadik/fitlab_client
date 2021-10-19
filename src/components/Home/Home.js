@@ -3,7 +3,9 @@ import Banner from '../Banner/Banner';
 import HomeCard from '../HomeCard/HomeCard';
 import useItems from '../hooks/useItems';
 import Slideshow from '../Slider/Slider';
+import CTA from './CTA/CTA';
 import './Home.css';
+import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
   const [services] = useItems();
@@ -65,6 +67,8 @@ const Home = () => {
           </div>
         </div>
       )}
+      <Testimonial></Testimonial>
+      <CTA></CTA>
     </div>
   );
 };

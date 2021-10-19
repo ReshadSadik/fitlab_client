@@ -9,9 +9,15 @@ const Login = () => {
   let history = useHistory();
   let location = useLocation();
   const redirectUrl = location.state?.from || '/';
+  console.log(redirectUrl);
 
-  const handleRedirect = () => {
+  const handleGoogleRedirect = () => {
     googleSignIn().then((result) => {
+      history.push(redirectUrl);
+    });
+  };
+  const handleEmailPassRedirect = (email, password) => {
+    getLoginEmailPassword(email, password).then((userCredential) => {
       history.push(redirectUrl);
     });
   };
@@ -108,7 +114,7 @@ const Login = () => {
                 <button
                   type="submit"
                   onClick={() => {
-                    getLoginEmailPassword(email, password);
+                    handleEmailPassRedirect(email, password);
                   }}
                   className=" bg-green-600 xl:p-3 p-1 rounded-3xl w-1/2 h-full text-white font-semibold hover:bg-green-600 cursor-pointer"
                 >
@@ -125,15 +131,12 @@ const Login = () => {
                     Sign up
                   </Link>{' '}
                 </p>
-                <div className="flex mt-5 mx-auto text-center">
+                <div className="flex mt-5 justify-center  text-center">
                   <button
-                    onClick={handleRedirect}
+                    onClick={handleGoogleRedirect}
                     className="bg-green-600 mx-5   xl:px-5 px-3 rounded-3xl  h-8 xl:h-10 text-white font-semibold text-sm hover:bg-green-500 mb-5"
                   >
                     google sign in
-                  </button>
-                  <button className="bg-green-600 mx-5  text-sm  rounded-3xl xl:px-5 px-3 h-8 xl:h-10 text-white font-semibold hover:bg-green-500 cursor-pointer">
-                    facebook sign in
                   </button>
                 </div>
               </div>

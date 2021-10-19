@@ -18,20 +18,27 @@ const googleProvider = new GoogleAuthProvider();
 const useFirebase = () => {
   const [users, setUsers] = useState({});
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   //--------------- google sign in start------------//
   const googleSignIn = () => {
-    return signInWithPopup(auth, googleProvider).catch((error) => {
-      const errorMessage = error.message;
-      setError(errorMessage);
-    });
+    setIsLoading(true);
+    return signInWithPopup(auth, googleProvider)
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   //---------------- google sign in end------------//
 
   //------------  create user with email password start----------//
 
   const getRegisterEmailPassword = (email, password, name) => {
-    createUserWithEmailAndPassword(auth, email, password)
+    setIsLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         // const user = userCredential.user;
@@ -42,6 +49,9 @@ const useFirebase = () => {
         const errorMessage = error.message;
         setError(errorMessage);
         // ..
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
     setUserName(name);
   };
@@ -65,17 +75,23 @@ const useFirebase = () => {
 
   //   sign in with email pass start
   const getLoginEmailPassword = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        setUsers(user);
-        // ...
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
+    setIsLoading(true);
+    return (
+      signInWithEmailAndPassword(auth, email, password)
+        // .then((userCredential) => {
+        //   // Signed in
+        //   const user = userCredential.user;
+        //   setUsers(user);
+        //   // ...
+        // })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setError(errorMessage);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        })
+    );
   };
   //   sign in with email pass end
 
@@ -86,6 +102,7 @@ const useFirebase = () => {
         setUsers(user);
       } else {
       }
+      setIsLoading(false);
     });
   }, []);
   //----------   authenticate user end-------------//-
@@ -93,12 +110,16 @@ const useFirebase = () => {
   //------------   sign out users start----------//
 
   const signOutUser = () => {
+    setIsLoading(true);
     signOut(auth)
       .then(() => {
         setUsers({});
       })
       .catch((error) => {
         // An error happened.
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
   //------------   sign out users end----------//
@@ -111,6 +132,7 @@ const useFirebase = () => {
     users,
     error,
     setError,
+    isLoading,
   };
 };
 
