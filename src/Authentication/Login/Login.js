@@ -9,7 +9,7 @@ const Login = () => {
   let history = useHistory();
   let location = useLocation();
   const redirectUrl = location.state?.from || '/';
-  console.log(redirectUrl);
+  const newError = error.slice(22, 45);
 
   const handleGoogleRedirect = () => {
     googleSignIn().then((result) => {
@@ -18,7 +18,9 @@ const Login = () => {
   };
   const handleEmailPassRedirect = (email, password) => {
     getLoginEmailPassword(email, password).then((userCredential) => {
-      history.push(redirectUrl);
+      // const user = userCredential.user;
+
+      userCredential?.user ? history.push(redirectUrl) : <div></div>;
     });
   };
 
@@ -28,7 +30,7 @@ const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const newError = error.slice(22, 50);
+  // const newError = error.slice(22, 50);
   const getLoginEmailValue = (e) => {
     setEmail(e.target.value);
   };
@@ -50,9 +52,7 @@ const Login = () => {
               <p className="xl:text-5xl text-3xl text-center pt-10 text-green-600 font-bold">
                 Welcome Back
               </p>
-              <div>
-                <h2>{users.email}</h2>
-              </div>
+              <div></div>
               <p className="text-xl py-3 text-center text-gray-400 font-semibold">
                 Sign in to continue
               </p>
@@ -61,6 +61,7 @@ const Login = () => {
               <div className="mx-12 p-3 pb-10 rounded-xl shadow-sm bg-gray-100">
                 <div className="p-3 mx-6 border-b border-gray-500">
                   <input
+                    id="loginEmail"
                     required
                     onBlur={getLoginEmailValue}
                     placeholder="Email"
@@ -71,6 +72,7 @@ const Login = () => {
 
                 <div className="p-3 mx-6 flex border-b border-gray-500">
                   <input
+                    id="loginPassword"
                     required
                     onBlur={getLoginPasswordValue}
                     placeholder="Password"

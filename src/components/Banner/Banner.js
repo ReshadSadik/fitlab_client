@@ -5,7 +5,7 @@ const Banner = (props) => {
   const { bannerText } = props;
   const { bannerImg } = props;
   const { slideShow } = props;
-  console.log(bannerImg);
+
   return (
     <div
       style={{

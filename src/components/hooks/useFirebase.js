@@ -39,12 +39,21 @@ const useFirebase = () => {
   const getRegisterEmailPassword = (email, password, name) => {
     setIsLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         // Signed in
         // const user = userCredential.user;
         // setUsers({});
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
+
+        window.location.reload();
         // ...
       })
+
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
@@ -53,23 +62,12 @@ const useFirebase = () => {
       .finally(() => {
         setIsLoading(false);
       });
-    setUserName(name);
   };
 
-  const setUserName = (name) => {
-    //   update userName
-    updateProfile(auth.currentUser, {
-      displayName: name,
-    })
-      .then(() => {
-        // Profile updated!
-        // ...
-      })
-      .catch((error) => {
-        // An error occurred
-        // ...
-      });
-  };
+  // const setUserName = (name) => {
+  //   //   update userName
+
+  // };
 
   //------------ create user with email end----------//
 
@@ -101,6 +99,7 @@ const useFirebase = () => {
       if (user) {
         setUsers(user);
       } else {
+        setUsers({});
       }
       setIsLoading(false);
     });

@@ -10,11 +10,19 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
-  const { getRegisterEmailPassword, googleSignIn, error, setError } = useAuth();
+  const { getRegisterEmailPassword, googleSignIn, error, users, setError } =
+    useAuth();
   useEffect(() => {
     setError('');
   }, []);
   // const newError = error.slice(22, 50);
+
+  const handleGoogleRedirect = () => {
+    googleSignIn().then((result) => {
+      history.push(redirectUrl);
+    });
+  };
+
   const getRegisterEmailValue = (e) => {
     setEmail(e.target.value);
   };
@@ -25,9 +33,12 @@ const Register = () => {
     setDisplayName(e.target.value);
   };
   const handleRegister = (email, password, displayName) => {
-    getRegisterEmailPassword(email, password, displayName).then(() => {
-      history.push(redirectUrl);
-    });
+    getRegisterEmailPassword(email, password, displayName).then(
+      (userCredential) => {
+        userCredential?.user ? history.push(redirectUrl) : <div></div>;
+        // history.push(redirectUrl);
+      }
+    );
   };
   return (
     <div>
@@ -147,7 +158,7 @@ const Register = () => {
               </p>
               <div className="flex mt-5 justify-center">
                 <button
-                  onClick={googleSignIn}
+                  onClick={handleGoogleRedirect}
                   className="bg-green-600 text-white font-semibold xl:mx-5 mx-1   xl:px-5 px-3 rounded-3xl  h-8 xl:h-10 text-sm  mb-5"
                 >
                   google sign up
