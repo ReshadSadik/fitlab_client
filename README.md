@@ -6,9 +6,9 @@ Live site to the website [FITLAB](https://fiitlab.netlify.app/)
 
 - This is a website to enroll to any course of your need!
 - It has login authentication
-  -so to start learning you need to Log In first
+- so to start learning you need to Log In first
 - Here we have professional trainers, developers and to learn from the very best!
-  -You can see satisfied Clients feedback.
+- You can see satisfied Clients feedback.
 - Select any Course and get started right away!
 
   _Be Fit Be Happy!_
