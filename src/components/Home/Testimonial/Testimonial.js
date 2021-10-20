@@ -3,10 +3,10 @@ import React from 'react';
 const Testimonial = () => {
   return (
     <div>
-      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
-        <div class="w-full text-center pb-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+        <div className="w-full text-center pb-8">
           <svg
-            class="mx-auto"
+            className="mx-auto"
             width="48"
             height="42"
             viewBox="0 0 48 42"
@@ -23,11 +23,11 @@ const Testimonial = () => {
             />
           </svg>
 
-          <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-600 pb-2">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-600 pb-2">
             What client's say about us
           </h1>
 
-          <p class="text-gray-500 font-normal text-base">
+          <p className="text-gray-500 font-normal text-base">
             <span className="text-green-600 font-semibold text-xl">FITLAB</span>{' '}
             is a good community to help you stay fit in the future! Getting
             started is easy. You will be able to choose the best set of
@@ -35,21 +35,25 @@ const Testimonial = () => {
             and design a training plan tailored to your goals
           </p>
         </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gray-700  shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-6 mb-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-gray-700  shadow-md rounded-lg p-6">
+            <div className="flex items-center space-x-6 mb-4">
               <img
-                class="h-28 w-28 object-cover object-center rounded-full"
+                className="h-28 w-28 object-cover object-center rounded-full"
                 src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
                 alt=""
               />
               <div>
-                <p class="text-xl text-white font-normal mb-1">Keanu Reeves</p>
-                <p class="text-base text-green-500 font-semibold">Accountant</p>
+                <p className="text-xl text-white font-normal mb-1">
+                  Keanu Reeves
+                </p>
+                <p className="text-base text-green-500 font-semibold">
+                  Accountant
+                </p>
               </div>
             </div>
             <div>
-              <p class="text-gray-400 leading-loose font-normal text-base">
+              <p className="text-gray-400 leading-loose font-normal text-base">
                 i am a regular member of Fitlab . my attendance is 90%.They
                 always helped me in every way possible. i always do cardio
                 before doing weights i spend 15 minutes on the treadmill before
@@ -57,64 +61,72 @@ const Testimonial = () => {
               </p>
             </div>
           </div>
-          <div class="bg-gray-700  shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-6 mb-4">
+          <div className="bg-gray-700  shadow-md rounded-lg p-6">
+            <div className="flex items-center space-x-6 mb-4">
               <img
-                class="h-28 w-28 object-cover object-center rounded-full"
+                className="h-28 w-28 object-cover object-center rounded-full"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
                 alt=""
               />
               <div>
-                <p class="text-xl text-white font-normal mb-1">Lucy Carter</p>
-                <p class="text-base text-green-500 font-semibold">HouseWife</p>
+                <p className="text-xl text-white font-normal mb-1">
+                  Lucy Carter
+                </p>
+                <p className="text-base text-green-500 font-semibold">
+                  HouseWife
+                </p>
               </div>
             </div>
             <div>
-              <p class="text-gray-400 leading-loose font-normal text-base">
+              <p className="text-gray-400 leading-loose font-normal text-base">
                 Fitlab is a good place for me. I am new here and so excited and
                 curious about this Community. since I have no idea at the moment
                 they will instruct me about my medication and health.
               </p>
             </div>
           </div>
-          <div class="bg-gray-700  shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-6 mb-4">
+          <div className="bg-gray-700  shadow-md rounded-lg p-6">
+            <div className="flex items-center space-x-6 mb-4">
               <img
-                class="h-28 w-28 object-cover object-center rounded-full"
+                className="h-28 w-28 object-cover object-center rounded-full"
                 src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80"
                 alt=""
               />
               <div>
-                <p class="text-xl text-white font-normal mb-1">Rose Hannaman</p>
-                <p class="text-base text-green-500 font-semibold">
+                <p className="text-xl text-white font-normal mb-1">
+                  Rose Hannaman
+                </p>
+                <p className="text-base text-green-500 font-semibold">
                   Graphics Designer
                 </p>
               </div>
             </div>
             <div>
-              <p class="text-gray-400 leading-loose font-normal text-base">
+              <p className="text-gray-400 leading-loose font-normal text-base">
                 As a designer i Have to sit all day the table which is very bad
                 for my posture so I found the solution in Fitlab. Now i can work
                 full day without any stress whatsoever!
               </p>
             </div>
           </div>
-          <div class="bg-gray-700 shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-6 mb-4">
+          <div className="bg-gray-700 shadow-md rounded-lg p-6">
+            <div className="flex items-center space-x-6 mb-4">
               <img
-                class="h-28 w-28 object-cover object-center rounded-full"
+                className="h-28 w-28 object-cover object-center rounded-full"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
                 alt=""
               />
               <div>
-                <p class="text-xl text-white font-normal mb-1">Agent Carter</p>
-                <p class="text-base  text-green-500 font-semibold">
+                <p className="text-xl text-white font-normal mb-1">
+                  Agent Carter
+                </p>
+                <p className="text-base  text-green-500 font-semibold">
                   SHIELD Spy
                 </p>
               </div>
             </div>
             <div>
-              <p class="text-gray-400 leading-loose font-normal text-base">
+              <p className="text-gray-400 leading-loose font-normal text-base">
                 I'm on the avengers team and i have to run missions , kill
                 enemies which takes a lot of physical strenth, which i got from
                 the FITLAB instructor JIMIN. So fitlab is the best solution for

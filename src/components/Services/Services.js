@@ -9,7 +9,7 @@ const Services = () => {
   const reverseServices = services.reverse();
   const bannerText = (
     <div
-      class="my-4 xl:mt-40 xl:mr-96 mt-80  mr-0   text-white md:text-5xl
+      className="my-4 xl:mt-40 xl:mr-96 mt-80  mr-0   text-white md:text-5xl
              text-2xl italic font-bold text-center md:text-left slide-in-bottom-h1"
     >
       <h1 className="text-center mt-0 md:mt-20 font-mono uppercase">

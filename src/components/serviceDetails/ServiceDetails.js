@@ -17,28 +17,28 @@ const ServiceDetails = () => {
     <div>
       {services.length ? (
         <div>
-          <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+          <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
             {/* <!--Main Col--> */}
             <div
               id="profile"
-              class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0"
+              className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0"
             >
-              <div class="p-4 md:p-12 text-center lg:text-left">
+              <div className="p-4 md:p-12 text-center lg:text-left">
                 {/* <!-- Image for mobile view--> */}
                 <div
-                  class="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
+                  className="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${matchedItem.backgroundImg})`,
                   }}
                 ></div>
 
-                <h1 class="text-3xl font-bold pt-8 lg:pt-0">
+                <h1 className="text-3xl font-bold pt-8 lg:pt-0">
                   {matchedItem.name}
                 </h1>
-                <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
-                <p class="pt-4 text-2xl text-green-800 capitalize font-bold flex items-center justify-center lg:justify-start">
+                <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                <p className="pt-4 text-2xl text-green-800 capitalize font-bold flex items-center justify-center lg:justify-start">
                   <svg
-                    class="h-4 fill-current text-green-700 pr-4"
+                    className="h-4 fill-current text-green-700 pr-4"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -46,9 +46,9 @@ const ServiceDetails = () => {
                   </svg>{' '}
                   {matchedItem.instructor}
                 </p>
-                <p class="pt-2 text-gray-600 text-xs lg:text-lg font-bold flex items-center justify-center lg:justify-start">
+                <p className="pt-2 text-gray-600 text-xs lg:text-lg font-bold flex items-center justify-center lg:justify-start">
                   <svg
-                    class="h-4 fill-current text-green-700 pr-4"
+                    className="h-4 fill-current text-green-700 pr-4"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -56,22 +56,24 @@ const ServiceDetails = () => {
                   </svg>{' '}
                   ${matchedItem.price}
                 </p>
-                <p class="pt-8 text-3xl font-semibold">{matchedItem.topic}</p>
+                <p className="pt-8 text-3xl font-semibold">
+                  {matchedItem.topic}
+                </p>
 
-                <div class="pt-12 pb-8">
-                  <button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full">
+                <div className="pt-12 pb-8">
+                  <button className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full">
                     Get In Touch
                   </button>
                 </div>
 
-                <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-center">
+                <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-center">
                   <a
-                    class="link"
+                    className="link"
                     href="/"
                     data-tippy-content="@facebook_handle"
                   >
                     <svg
-                      class="h-6 fill-current text-gray-600 hover:text-green-700 mx-3"
+                      className="h-6 fill-current text-gray-600 hover:text-green-700 mx-3"
                       role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -80,9 +82,13 @@ const ServiceDetails = () => {
                       <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
                     </svg>
                   </a>
-                  <a class="link" href="/" data-tippy-content="@twitter_handle">
+                  <a
+                    className="link"
+                    href="/"
+                    data-tippy-content="@twitter_handle"
+                  >
                     <svg
-                      class="h-6 fill-current mx-3 text-gray-600 hover:text-green-700"
+                      className="h-6 fill-current mx-3 text-gray-600 hover:text-green-700"
                       role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -92,12 +98,12 @@ const ServiceDetails = () => {
                     </svg>
                   </a>
                   <a
-                    class="link"
+                    className="link"
                     href="/"
                     data-tippy-content="@instagram_handle"
                   >
                     <svg
-                      class="h-6 mx-3 fill-current text-gray-600 hover:text-green-700"
+                      className="h-6 mx-3 fill-current text-gray-600 hover:text-green-700"
                       role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -111,18 +117,18 @@ const ServiceDetails = () => {
             </div>
 
             {/* <!--Img Col--> */}
-            <div class="w-full lg:w-2/5">
+            <div className="w-full lg:w-2/5">
               <img
                 src={matchedItem.instructorImg}
                 alt=""
-                class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+                className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
               />
             </div>
           </div>
         </div>
       ) : (
-        <div class=" flex justify-center items-center">
-          <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        <div className=" flex justify-center items-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
         </div>
       )}
     </div>

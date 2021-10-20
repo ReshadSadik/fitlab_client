@@ -2,16 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../components/hooks/useAuth';
 import { BsFillEyeSlashFill } from 'react-icons/bs';
+import { getAuth } from 'firebase/auth';
 
 const Register = () => {
+  const auth = getAuth();
   let history = useHistory();
   let location = useLocation();
-  const redirectUrl = '/';
+  const redirectUrl = location.state?.from || '/';
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
-  const { getRegisterEmailPassword, googleSignIn, error, users, setError } =
-    useAuth();
+  const {
+    getRegisterEmailPassword,
+    googleSignIn,
+    error,
+    users,
+    setError,
+    updateProfile,
+  } = useAuth();
   useEffect(() => {
     setError('');
   }, []);
@@ -33,13 +42,25 @@ const Register = () => {
     setDisplayName(e.target.value);
   };
   const handleRegister = (email, password, displayName) => {
-    getRegisterEmailPassword(email, password, displayName).then(
-      (userCredential) => {
-        // userCredential?.user ? history.push(redirectUrl) : <div></div>;
-        // history.push(redirectUrl);
-        users.email && history.push('/');
+    getRegisterEmailPassword(email, password, displayName).then((res) => {
+      // Signed in
+      // const user = userCredential.user;
+      // setUsers({});
+
+      if (res) {
+        history.push('/home');
+        window.location.reload();
       }
-    );
+
+      updateProfile(auth.currentUser, {
+        displayName: displayName,
+      }).catch((error) => {
+        // An error occurred
+        // ...
+      });
+
+      // ...
+    });
   };
   return (
     <div>

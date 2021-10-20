@@ -18,7 +18,7 @@ const Home = () => {
   const bannerText = (
     <div>
       <div
-        class="xl:my-4 my-0  text-white md:text-5xl
+        className="xl:my-4 my-0  text-white md:text-5xl
              text-xl italic font-bold text-center md:text-left slide-in-bottom-h1"
       >
         <h1 className="text-center mt-0 md:mt-20 font-mono uppercase">
@@ -30,7 +30,7 @@ const Home = () => {
           your favourite habit!
         </h1>
       </div>
-      <p class="leading-normal text-base md:text-xl mb-8 text-center text-green-400 mt-10 ml-10 md:text-left slide-in-bottom-subtitle ">
+      <p className="leading-normal text-base md:text-xl mb-8 text-center text-green-400 mt-10 ml-10 md:text-left slide-in-bottom-subtitle ">
         We are here to guide your through your future journey!
       </p>
     </div>
@@ -68,8 +68,8 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div class=" flex justify-center items-center">
-          <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        <div className=" flex justify-center items-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
         </div>
       )}
       <Testimonial></Testimonial>

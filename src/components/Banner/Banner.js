@@ -13,9 +13,9 @@ const Banner = (props) => {
       }}
       className="banner"
     >
-      <div class="container py-15 px-6 mx-auto flex flex-wrap items-center   justify-center">
+      <div className="container py-15 px-6 mx-auto flex flex-wrap items-center   justify-center">
         {/* image carousel slider start */}
-        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start  overflow-y-hidden  ">
+        <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start  overflow-y-hidden  ">
           {slideShow}
         </div>
         {/* image carousel slider end */}
