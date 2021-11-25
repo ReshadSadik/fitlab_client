@@ -59,22 +59,14 @@ const useFirebase = () => {
   //   sign in with email pass start
   const getLoginEmailPassword = (email, password) => {
     setIsLoading(true);
-    return (
-      signInWithEmailAndPassword(auth, email, password)
-        // .then((userCredential) => {
-        //   // Signed in
-        //   const user = userCredential.user;
-        //   setUsers(user);
-        //   // ...
-        // })
-        .catch((error) => {
-          const errorMessage = error.message;
-          setError(errorMessage);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        })
-    );
+    return signInWithEmailAndPassword(auth, email, password)
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   //   sign in with email pass end
 
@@ -114,7 +106,7 @@ const useFirebase = () => {
     getRegisterEmailPassword,
     getLoginEmailPassword,
     updateProfile,
-
+    setUsers,
     users,
     error,
     setError,

@@ -10,27 +10,23 @@ const Register = () => {
   let location = useLocation();
   const redirectUrl = location.state?.from || '/';
 
+  // declared states for email,password, name
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const {
     getRegisterEmailPassword,
     googleSignIn,
     error,
-    users,
+    setUsers,
     setError,
     updateProfile,
   } = useAuth();
   useEffect(() => {
     setError('');
   }, []);
-  // const newError = error.slice(22, 50);
-
-  const handleGoogleRedirect = () => {
-    googleSignIn().then((result) => {
-      history.push(redirectUrl);
-    });
-  };
+  // getting all the input values
 
   const getRegisterEmailValue = (e) => {
     setEmail(e.target.value);
@@ -38,20 +34,32 @@ const Register = () => {
   const getRegisterPasswordValue = (e) => {
     setPassword(e.target.value);
   };
+  const getRegisterConfirmPasswordValue = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
   const getRegisterNameValue = (e) => {
     setDisplayName(e.target.value);
   };
+
+  // google popup sign up
+  const handleGoogleRedirect = () => {
+    googleSignIn().then((result) => {
+      history.push(redirectUrl);
+    });
+  };
+
+  // register using email and password and taking user to login after successful registration
+
   const handleRegister = (email, password, displayName) => {
     getRegisterEmailPassword(email, password, displayName).then((res) => {
-      // Signed in
-      // const user = userCredential.user;
-      // setUsers({});
-
-      if (res) {
-        history.push('/home');
-        window.location.reload();
+      if (password !== confirmPassword) {
+        setError("password doesn't match");
       }
-
+      if (res) {
+        history.push('/login');
+      }
+      // update userName or profile for registered user
       updateProfile(auth.currentUser, {
         displayName: displayName,
       }).catch((error) => {
@@ -59,9 +67,13 @@ const Register = () => {
         // ...
       });
 
+      // after successful registration set user to null so that user dont log in automatically
+
+      setUsers({});
       // ...
     });
   };
+
   return (
     <div>
       <Link to="/register">
@@ -120,6 +132,7 @@ const Register = () => {
                 </div>
                 <div className="p-3 mx-6 flex border-b border-gray-500">
                   <input
+                    onBlur={getRegisterConfirmPasswordValue}
                     placeholder="Confirm Password"
                     className="bg-transparent text-green-600 focus:outline-none focus:rang w-full"
                     type="password"
@@ -165,10 +178,6 @@ const Register = () => {
               />
             </form>
             <div className="w-full ">
-              {/* <button className=" bg-yellow-500 xl:p-3 p-1 rounded-3xl w-full h-full hover:bg-yellow-600">
-                {' '}
-                Sign up
-              </button> */}
               <p className="mx-auto text-center mt-3 text-gray-400">
                 already have an account?{' '}
                 <Link

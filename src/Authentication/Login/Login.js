@@ -4,39 +4,52 @@ import useAuth from '../../components/hooks/useAuth';
 import { BsFillEyeSlashFill } from 'react-icons/bs';
 
 const Login = () => {
-  const { getLoginEmailPassword, googleSignIn, users, error, setError } =
-    useAuth();
+  const { getLoginEmailPassword, googleSignIn, error, setError } = useAuth();
   let history = useHistory();
   let location = useLocation();
   const redirectUrl = location.state?.from || '/';
+  console.log(redirectUrl);
+  localStorage.setItem('path', redirectUrl.pathname);
+
   const newError = error.slice(22, 45);
 
-  const handleGoogleRedirect = () => {
-    googleSignIn().then((result) => {
-      history.push(redirectUrl);
-    });
-  };
-  const handleEmailPassRedirect = (email, password) => {
-    getLoginEmailPassword(email, password).then((userCredential) => {
-      // const user = userCredential.user;
-
-      userCredential?.user ? history.push(redirectUrl) : <div></div>;
-    });
-  };
-
-  useEffect(() => {
-    setError('');
-  }, []);
-
+  // get email and pass values
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const newError = error.slice(22, 50);
   const getLoginEmailValue = (e) => {
     setEmail(e.target.value);
   };
   const getLoginPasswordValue = (e) => {
     setPassword(e.target.value);
   };
+
+  // sign In using google popup
+  const handleGoogleRedirect = () => {
+    googleSignIn().then((result) => {
+      history.push(redirectUrl);
+    });
+  };
+
+  // localStorage.setItem('path', redirectUrl.pathname);
+  // sign in using email and password
+  const handleEmailPassRedirect = (email, password) => {
+    getLoginEmailPassword(email, password).then((res) => {
+      // console.log(redirectUrl);
+
+      // localStorage.setItem('path', redirectUrl.pathname);
+
+      window.location.pathname = localStorage.getItem('path');
+
+      // res && history.push(redirectUrl);
+      // reload after login to see name and other infos
+      // window.location.reload();
+    });
+  };
+
+  //
+  useEffect(() => {
+    setError('');
+  }, []);
 
   return (
     <div>
