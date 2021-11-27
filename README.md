@@ -4,11 +4,11 @@ Getting started is easy. You will be able to choose the best set of exercises fo
 
 Live site to the website [FITLAB](https://fiitlab.netlify.app/)
 
-- This is a website to enroll to any course of your need!
-- It has login authentication
-- so to start learning you need to Log In first
+- An online platform to practise regular exercise with our instructors
+- Utilized google authentication for login purpose so to start learning you need to Log In first
 - Here we have professional trainers, developers and to learn from the very best!
 - You can see satisfied Clients feedback.
 - Select any Course and get started right away!
+- Created manual API to show the products
 
   _Be Fit Be Happy!_
