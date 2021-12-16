@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchSingleServices } from '../../redux/slices/servicesslice';
 import './Service.css';
 
 const Service = (props) => {

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchServices } from '../../redux/slices/servicesslice';
 import Banner from '../Banner/Banner';
 import HomeCard from '../HomeCard/HomeCard';
 import useItems from '../hooks/useItems';
@@ -8,7 +10,13 @@ import './Home.css';
 import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
-  const [services] = useItems();
+  // const [services] = useItems();
+  const services = useSelector((state) => state.services.services);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, []);
   const homeBannerImg = '../../images/home-bg.png';
   const slideShow = (
     <div>

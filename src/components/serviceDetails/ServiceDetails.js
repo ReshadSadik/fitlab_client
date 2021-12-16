@@ -1,15 +1,17 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { fetchSingleServices } from '../../redux/slices/servicesslice';
 import useItems from '../hooks/useItems';
 
 const ServiceDetails = () => {
   const { _id } = useParams();
   const [services] = useItems();
-  console.log(services);
-  console.log(_id);
 
-  const matchedItem = services.find((item) => item._id === _id);
+  // const matchedItem = services.find((item) => item._id === _id);
 
+  const matchedItem = useSelector((state) => state.services.singleService);
   // const { name, price, topic, backgroundImg, instructorImg, instructor } =
   //   matchedItem;
 

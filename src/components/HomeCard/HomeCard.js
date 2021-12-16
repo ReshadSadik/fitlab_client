@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchSingleServices } from '../../redux/slices/servicesslice';
 import './HomeCard.css';
 
 const HomeCard = (props) => {
+  const dispatch = useDispatch();
   const { name, price, _id, topic, backgroundImg } = props.service;
   const redirectUrl = `/service/${_id}`;
   const styleSheet = {
@@ -28,7 +31,7 @@ const HomeCard = (props) => {
             {topic}
           </p>
           <Link to={redirectUrl}>
-            <div>
+            <div onClick={() => dispatch(fetchSingleServices(_id))}>
               <button className="homeCardBtn rounded sm:text-2xl bg-green-600">
                 Details
               </button>

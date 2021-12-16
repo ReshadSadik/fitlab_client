@@ -1,12 +1,22 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchServices } from '../../redux/slices/servicesslice';
 import Banner from '../Banner/Banner';
-import useItems from '../hooks/useItems';
+// import useItems from '../hooks/useItems';
 import Service from '../Service/Service';
 import './Services.css';
 
 const Services = () => {
-  const [services] = useItems();
+  // const [services] = useItems();
+  const services = useSelector((state) => state.services.services);
+  const dispatch = useDispatch();
+  console.log(services);
+
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, []);
   const homeBannerImg = '../../images/banner-bg-2.jpg';
-  const reverseServices = services.reverse();
+  // const reverseServices = services?.reverse();
   const bannerText = (
     <div
       className="my-4 xl:mt-40 xl:mr-96 mt-80  mr-0   text-white md:text-5xl
@@ -27,7 +37,7 @@ const Services = () => {
         {' '}
       </Banner>
       <div className="services ">
-        {reverseServices.map((service) => (
+        {services.map((service) => (
           <Service service={service}> </Service>
         ))}
       </div>

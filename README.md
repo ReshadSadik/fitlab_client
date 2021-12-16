@@ -6,6 +6,7 @@ Live site to the website [FITLAB](https://fiitlab.netlify.app/)
 
 - An online platform to practise regular exercise with our instructors
 - Utilized google authentication for login purpose so to start learning you need to Log In first
+- used redux for state management
 - Here we have professional trainers, developers and to learn from the very best!
 - You can see satisfied Clients feedback.
 - Select any Course and get started right away!
